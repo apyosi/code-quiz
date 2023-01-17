@@ -60,11 +60,11 @@ function message(string) {
   divChoices.appendChild(p1);
   let clearId = setInterval(function () {
     p1.textContent = "";
-    console.log(p1.textContent = "");
-    setTimeout(function() {
-    clearInterval(clearId);
-    },1000)
-  }, 1000)
+    console.log((p1.textContent = ""));
+    setTimeout(function () {
+      clearInterval(clearId);
+    }, 1000);
+  }, 1000);
 }
 
 function startCountdown() {
@@ -91,7 +91,6 @@ function startCountdown() {
   }, 1000);
 }
 
-
 function stopCoundown() {
   // clearInterval(intervalId);
 }
@@ -109,7 +108,7 @@ function getQuestion(index) {
       buttonAnswer.setAttribute("data-state", i);
       buttonAnswer.textContent = questions[index].answers[i];
       li.appendChild(buttonAnswer);
-    } 
+    }
   } else {
     h2Question.textContent = "";
   }
@@ -124,34 +123,30 @@ buttonStart.addEventListener("click", function () {
   getQuestion(questionIndex);
 });
 
-
-
-let highscore = JSON.parse(localStorage.getItem("scores"));
+let highscore = JSON.parse(localStorage.getItem("scores")) || [];
 buttonSubmit.addEventListener("click", function (event) {
   event.preventDefault;
   let initalStore = inputInitials.value;
   let currentScore = {
     initial: initalStore,
-    score: countdownTimer
-  }
+    score: countdownTimer,
+  };
   highscore.push(currentScore);
   console.log(currentScore);
   highscore.sort(function (a, b) {
     // return a.score + b.score;
-    if( a.score > b.score ){
+    if (a.score > b.score) {
       return -1;
-  }
+    }
 
-  if( a.score == b.score ){
+    if (a.score == b.score) {
       return 0;
-  }
+    }
 
-  if( a.score < b.score ){
+    if (a.score < b.score) {
       return 1;
-  }
+    }
   });
   localStorage.setItem("scores", JSON.stringify(highscore));
   document.location.assign("highscores.html");
- 
-})
-
+});

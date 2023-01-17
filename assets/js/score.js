@@ -1,4 +1,3 @@
-
 const selectOlist = document.querySelector("ol");
 let highscore = JSON.parse(localStorage.getItem("scores")) || [];
 for (let i = 0; i < highscore.length; i++) {
@@ -15,8 +14,6 @@ clearButton.addEventListener("click", () => {
   selectOlist.textContent = "";
   // window.location.reload();
 });
-
-
 
 /*function to create scores for testing purpouse
 

@@ -6,9 +6,9 @@
       -hide start div (setAttribute class hide)
       -show questions div (setAttribute class remove hide)
     Questions contain buttons for each answer.
-      -show the 1st question with the possible answers(loop the questions) createElement, set contentText  
+      -show the 1st question with the possible answers(loop the answers) createElement, set contentText  
     When answer is clicked, the next question appears
-      -on clic of some answer(move to next question)
+      -on click of some answer(move to next question)
       -If the answer clicked was incorrect then subtract time from the clock(penalty 15 sec),show message 
       -if answer is correct, show message 
     The quiz should end when all questions are answered or the timer reaches 0. 
@@ -91,7 +91,7 @@ function startCountdown() {
   }, 1000);
 }
 
-function stopCoundown() {
+function stopCountdown() {
   // clearInterval(intervalId);
 }
 
@@ -126,9 +126,9 @@ buttonStart.addEventListener("click", function () {
 let highscore = JSON.parse(localStorage.getItem("scores")) || [];
 buttonSubmit.addEventListener("click", function (event) {
   event.preventDefault;
-  let initalStore = inputInitials.value;
+  let initialStore = inputInitials.value;
   let currentScore = {
-    initial: initalStore,
+    initial: initialStore,
     score: countdownTimer,
   };
   highscore.push(currentScore);

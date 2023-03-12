@@ -28,7 +28,7 @@ const questions = [
   },
   {
     question:
-      "A very useful tool used during development and debugging for printing content to the debuger is",
+      "A very useful tool used during development and debugging for printing content to the debugger is",
     answers: ["JavaScript", "terminal / bash", "for loops", "console.log"],
     correct: 3,
   },

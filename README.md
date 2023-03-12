@@ -27,7 +27,7 @@ Create a code quiz that contains the following requirements:
 
 
 ## Mock-Up
-![Coding Quiz demo](/demo/demo.gif)
+![Coding Quiz demo](/demo/mock-up.gif)
 
 
 ## Built with
